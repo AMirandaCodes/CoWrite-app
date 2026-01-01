@@ -1,0 +1,170 @@
+/* Centers anything */
+.centered {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Sets background colour and page margins */
+body{
+    background-color: #eae2b7;
+    margin-bottom: 50px;
+    font-family: 'Trebuchet MS', sans-serif;
+    color: #003049;
+}
+
+/* Homepage Main title */
+#index_main_title{
+    font-family: Garamond;
+    font-size: 200px; /* Fallback */
+    font-size: clamp(12px, 10vw, 200px); /* Modern browsers */
+}
+
+/* Homepage Introductory phrase */
+#index_phrase{
+    font-family: Allura;
+    font-size: 30px; /* Fallback */
+    font-size: clamp(4px, 10vw, 30px); /* Modern browsers */
+}
+
+.custom-navbar {
+    background-color: #eae2b7;
+}
+
+.navbar-brand,
+.nav-link {
+    color: #003049 !important;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #d62828 !important;
+}
+
+.session-nav {
+    border-left: 2px solid #003049;
+    padding-left: 20px;
+}
+
+/* H1 titles to be underlined */
+h1 {
+    text-decoration: underline;
+}
+
+/* Section for each draft/contribution */
+.codraft_div {
+    border: 2px solid #f77f00;
+    background-color: #fcbf49;
+    text-align: center;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.codraft_div {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.codraft_div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+form {
+    border-radius: 5px;
+    padding: 20px;
+}
+
+::placeholder {
+    color: #eae2b7;
+    font-style: italic;
+}
+
+input[type=text],
+select {
+    width: 100%;
+    max-width: 200px;
+}
+
+input[type=number] {
+    width: 100%;
+    max-width: 60px;
+}
+
+textarea {
+    width: 100%;
+    max-width: 500px;
+}
+
+input[type=text],
+input[type=number],
+input[type=password],
+select {
+    background-color: #f77f00;
+    border: 2px solid #f77f00;
+    color: white;
+    padding: 5px;
+    margin: 10px 0;
+}
+
+label {
+    font-weight: bold;
+}
+
+select>option {
+    background-color: #b8e1ba;
+}
+
+/* Custome buttons across website */
+.custom-button-colour {
+    background-color: #f77f00;
+    color: white;
+    font-family: Allura;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.custom-button-colour:hover {
+    background-color: #d62828;
+    color: white;
+}
+
+/* Emphasized text */
+em {
+    color: #003049;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.flash_error,
+.flash_success,
+.flash_info {
+    padding: 20px;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.flash_error {background-color: #d62828;}
+.flash_success {background-color: #04AA6D;}
+.flash_info {background-color: #003049;}
+
+/* Source: https://www.w3schools.com/howto/howto_js_alert.asp */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Source: https://www.w3schools.com/howto/howto_js_alert.asp */
+.closebtn:hover {
+  color: black;
+}
