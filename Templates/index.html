@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome to CoWrite!
+{% endblock %}
+
+{% block main %}
+    <div class="container mt-5 text-center">
+        <p id="index_main_title"></p>
+        <h3>A collaborative writing environment for writers</h3>
+        <br>
+        <a href="{{ url_for('new_codraft') }}" class="btn btn-lg custom-button-colour">Start Draft</a>
+    </div>
+
+<script>
+//Typing effect for main title
+    let title = "CoWrite";
+    let i = 0;
+
+    function TypeEffect(){
+        if (i < title.length) {
+            document.getElementById("index_main_title").innerHTML += title.charAt(i);
+            i++;
+            setTimeout(TypeEffect, 200);
+        } else {
+            setTimeout(() => {
+                i = 0;
+                document.getElementById("index_main_title").innerHTML = "";
+                TypeEffect();
+            }, 1500);
+        }
+    }
+</script>
+
+{% endblock %}

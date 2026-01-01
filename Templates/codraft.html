@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    CoDraft details: "{{info.title}}"
+{% endblock %}
+
+{% block main %}
+    <h1>{{info.title}}</h1>
+    <br>
+        <p>{{current_text}}</p>
+    <br>
+    <hr>
+
+    <h3>Contribution history</h3>
+    {% for c in contributions %}
+        <div class="codraft_div">
+            {{c.text_snapshot}}
+            <hr>
+            <small>Edited by <a href="{{ url_for('profile', id=c.author.id)}}">{{c.author.username}}</a> at {{c.timestamp}}</small>
+        </div>
+        <br>
+    {% endfor %}
+    <br>
+
+    <h2>Status</h2>
+    {% if not info.is_completed %}
+        <em>This piece is still open. To add a contribution, click here:</em>
+        <hr>
+        <a href="{{ url_for('add_contribution', id=info.id) }}" class="custom-button-colour">Add contribution</a>
+    {% else %}
+        <em>This piece is marked as completed.</em>
+    {% endif %}
+
+{% endblock %}

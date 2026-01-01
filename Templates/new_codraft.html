@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    New CoDraft
+{% endblock %}
+
+{% block main %}
+    <h1>New Codraft</h1>
+    <form action="/new-codraft" method="post">
+        <label for="title" ><h4>Title:</h4></label>
+        <input type="text" name="title" minlength="1" maxlength="50" placeholder="Title of the piece" required>
+        <br>
+
+        <label for="category"><h4>Category:</h4></label>
+        <select name="category" required>
+            <option value="default" disabled selected>Select a category</option>
+            <option value="Poetry">Poetry</option>
+            <option value="Short_fiction">Short fiction</option>
+            <option value="Longform">Longform</option>
+        </select>
+        <br>
+
+        <label for="maxcontribution"><h4>Max. contribution:</h4></label>
+        <input type="number" name="maxcontribution" placeholder="0" min="1" max="100" required>
+        <select name="unittype" required>
+            <option value="default" disabled selected>Select a unit</option>
+            <option value="words">words</option>
+            <option value="sentences">sentences</option>
+            <option value="paragraphs">paragraphs</option>
+        </select>
+        <br>
+
+        <em>*This is the maximum contribution per author. <br>It will be applied after you publish this piece.</em>
+        <hr>
+
+        <label for="text"><h4>Text:</h4></label>
+        <br>
+        <textarea name="text" rows="6" cols="50" placeholder="Start writing your text here..." required></textarea>
+        <br>
+
+        <button type="submit" class="custom-button-colour">Create</button>
+    </form>
+{% endblock %}

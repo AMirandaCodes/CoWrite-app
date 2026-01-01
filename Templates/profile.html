@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile: {{user.username}}
+{% endblock %}
+
+{% block main %}
+<div class="centered">
+    <h1>Profile</h1>
+    {% if user.profile_image %}
+        <img src="{{ url_for('static', filename='profile_pics/' ~ user.profile_image) }}"
+            alt="Profile picture"
+            width="250">
+    {% else %}
+        <img src="{{ url_for('static', filename='profile_pics/default.png') }}"
+            alt="Default profile picture"
+            width="250">
+    {% endif %}
+
+        <p><b><u>Username:</b></u> <br>{{user.username}}</p>
+        <p><b><u>About me:</b></u> <br>{{user.intro}}</p>
+
+    {% if session.get("user_id") == user.id %}
+        <hr>
+        <a href="{{ url_for('change_profile', id=user.id) }}" class="custom-button-colour">Update profile</a>
+    {% endif %}
+
+</div>
+
+{% endblock %}

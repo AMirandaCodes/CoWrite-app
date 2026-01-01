@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create a new account
+{% endblock %}
+
+{% block main %}
+<h1 class="centered">Register</h1>
+    <form action="/register" method="post" class="centered">
+        <div class="mb-3">
+            <label for="username">Type a username</label>
+            <input name="username" type="text" placeholder="Username" autocomplete="off" class="form-control mx-auto w-auto" minlength="1" maxlength="20" required>
+        </div>
+        <br>
+
+        <div class="mb-3">
+            <label for="password">Create a password</label>
+            <input name="password" type="password" placeholder="Password" autocomplete="off" class="form-control mx-auto w-auto" minlength="4" maxlength="20" required>
+        </div>
+        <br>
+
+        <div class="mb-3">
+            <label for="confirmation">Confirm your password</label>
+            <input name="confirmation" type="password" placeholder="Confirm password" autocomplete="off" class="form-control mx-auto w-auto" minlength="4" maxlength="20" required>
+        </div>
+        <br>
+
+        <button type="submit" class="custom-button-colour">Register</button>
+    </form>
+{% endblock %}

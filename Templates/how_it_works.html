@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    How it works
+{% endblock %}
+
+{% block main %}
+<div class="centered" style="margin-bottom: 30px;">
+    <h1>How it works</h1>
+    <em>Tired of writing alone? Ever wondered how writing could be more collaborative?</em><br><br>
+    <p><b>CoWrite</b> is a shared writing space where multiple writers build a single piece together. One user starts a story, and other users continue it progressively, adding their own contributions along the way. You can explore stories written by other users and contribute to any open piece, helping it grow sentence by sentence or paragraph by paragraph.</p>
+</div>
+<hr>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm">
+        <h4>To create a new piece</h4>
+        <ol>
+            <li><a href="{{ url_for('register') }}">Create an account</a>.</li>
+            <li>Create a <a href="{{ url_for('new_codraft') }}">new CoDraft</a>.</li>
+            <li>Wait for other users to contribute.</li>
+            <li>Mark the piece as completed once you’re happy with the result.</li>
+        </ol>
+        <br>
+    </div>
+
+    <div class="col-sm">
+        <h4>To contribute to an existing piece</h4>
+        <ol>
+            <li>Go to the <a href="{{ url_for('community') }}">Community page</a>.</li>
+            <li>Find a piece you’d like to contribute to.</li>
+            <li>Click Add contribution.</li>
+            <li>Visit <a href="{{ url_for('my_codrafts') }}">My CoDrafts</a> to track the piece and see its progress.</li>
+        </ol>
+        <br>
+    </div>
+
+    <div class="col-sm">
+        <h4>Why this works well</h4>
+        <ul>
+            <li>Writing becomes social, not solitary.</li>
+            <li>Each contribution is credited to its author.</li>
+            <li>Stories evolve naturally through collaboration.</li>
+        </ul>
+        <br>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Community works
+{% endblock %}
+
+{% block main %}
+    <h1>Community works</h1>
+    {% if drafts %}
+        {% for draft in drafts %}
+        <div class="codraft_div">
+            <h4>{{draft.title}}</h4>
+            <p><b>Category:</b> {{draft.category}}</p>
+            <p><b>Status:</b> {{"Completed" if draft.is_completed else "In progress"}} </p>
+            <a href="{{ url_for('codraft', id=draft.id) }}" class="custom-button-colour">See details</a>
+        </div>
+        <hr>
+        {% endfor %}
+    {% else %}
+        <em>No drafts exist yet!</em>
+    {% endif %}
+
+{% endblock %}

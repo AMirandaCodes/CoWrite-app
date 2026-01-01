@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My CoDrafts
+{% endblock %}
+
+{% block main %}
+    <h1 class="section-title mt-4">My CoDrafts</h1>
+
+    <h2>Created CoDrafts</h2>
+    {% if created %}
+        {% for cre in created %}
+        <div class="container mt-5">
+            <div class="codraft_div">
+                <h3>{{cre.title}}</h3>
+                <p><b>Category:</b> {{cre.category}}<br>
+                <b>Status:</b> {{"Completed" if cre.is_completed else "In progress"}} </p>
+                <a href="{{ url_for('codraft', id=cre.id) }}" class="custom-button-colour">See details</a>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <em>You haven't created any CoDrafts</em>
+    {% endif %}
+
+    <hr>
+
+    <h2>Contributed CoDrafts</h2>
+    {% if contributed %}
+        {% for con in contributed %}
+        <div class="container mt-5">
+            <div class="codraft_div">
+                <h3>{{con.codraft.title}}</h3>
+                <p><b>Last edit at:</b> {{con.timestamp}}<br>
+                <b>Status:</b>{{"Completed" if con.codraft.is_completed else "In progress"}} </p>
+                <a href="{{ url_for('codraft', id=con.codraft.id) }}" class="custom-button-colour">See details </a>
+                <br>
+            </div>
+        </div>
+        <br>
+        {% endfor %}
+
+    {% else %}
+        <em>You haven't contributed to any CoDrafts</em>
+    {% endif %}
+
+{% endblock %}
