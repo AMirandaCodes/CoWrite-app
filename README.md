@@ -1,8 +1,10 @@
-# CoWrite
+# CoWrite (web application)
 ### Video Demo: https://youtu.be/A5_jkJxNF3I
-### Description: A web application where multiple writers collaboratively build a single piece of writing.
+### Description: 
+CoWrite is my CS50 Final Project, and it's a web application where multiple writers collaboratively build a single piece of writing.
 
----
+<img width="1658" height="898" alt="CoWrite Homepage" src="https://github.com/user-attachments/assets/1f53430c-eeae-4cb0-87de-2bbcc9818fca" />
+
 
 ## About CoWrite
 
